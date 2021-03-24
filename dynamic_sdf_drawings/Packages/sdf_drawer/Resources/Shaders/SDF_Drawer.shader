@@ -3,12 +3,18 @@ Shader "Unlit/SDF_Drawer"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _PreComputedHeightTex ("Precomputed_Height", 2D) = "white" {}
         _PrevNormalTex ("Prev_Normal", 2D) = "white" {}
         _NewNormalTex ("New_Normal", 2D) = "white" {}
         _PrevHeightTex ("Prev_Height", 2D) = "white" {}
         _NewHeightTex ("New_Height", 2D) = "white" {}
         _Sharpness ("Sharpness", Range(0.000,5)) = 0.1
         _OffsetDist ("OffsetDist", Range(0.001,0.1)) = 0.01
+        
+        _Scale_X("X_Scale", float) = 12.8
+        _Scale_Y("Y_Scale", float) = 7.2
+        _Offset_X("X_Offset", float) = 0
+        _Offset_Y("Y_Offset", float) = 0
     }
     SubShader
     {
@@ -41,6 +47,10 @@ Shader "Unlit/SDF_Drawer"
             float4 _ptA;
             float4 _ptB;
             float _Sharpness;
+            float _Scale_X;
+            float _Scale_Y;
+            float _Offset_X;
+            float _Offset_Y;
 
             // my methods
             float sdSegment( float2 p, float2 a, float2 b)
@@ -79,7 +89,7 @@ Shader "Unlit/SDF_Drawer"
                 fixed4 col = tex2D(_MainTex, i.uv);
 
                 //get sdf value
-                float2 uv = (1-i.uv) * float2(12.8,7.2);
+                float2 uv = (1-i.uv) * float2(_Scale_X,_Scale_Y) + float2(_Offset_X,_Offset_Y);
                 float sdf = sdSegment(uv,_ptA.xy, _ptB.xy);
                 sdf = smoothstep(0,_Sharpness,sdf);
                 
@@ -110,6 +120,7 @@ Shader "Unlit/SDF_Drawer"
             };
 
             sampler2D _MainTex;
+            sampler2D _PreComputedHeightTex;
             float4 _MainTex_TexelSize;
             float4 _MainTex_ST;
             float4 _ptA;
@@ -191,10 +202,12 @@ Shader "Unlit/SDF_Drawer"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                float3 normal = FindNormal(_MainTex, i.uv, _MainTex_TexelSize.x);
-                float sdf = sdSegment(i.uv,_ptA.xy, _ptB.xy);
-                sdf = smoothstep(0,_Sharpness,sdf);
-                float2 uv = i.uv/float2(_Width,_Height);
+                //float3 normal = FindNormal(_MainTex, i.uv, _MainTex_TexelSize.x);
+                float4 height = tex2D(_PreComputedHeightTex, i.uv);
+                float sdf = height.x;
+                //float sdf = sdSegment(i.uv,_ptA.xy, _ptB.xy);
+                //sdf = smoothstep(0,_Sharpness,sdf);
+                //float2 uv = i.uv/float2(_Width,_Height);
                 return float4( bumpFromDepth(i.uv,float2(_Width,_Height),0.1,sdf).rgb*0.5+0.5,1);
 
             }

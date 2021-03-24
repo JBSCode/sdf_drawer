@@ -152,20 +152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0443bdc80a0984a981313051a439be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controlPts:
-  - {fileID: 857704500}
-  - {fileID: 1466910188}
-  - {fileID: 1531738553}
   endEffector: {fileID: 359883525}
-  box: {fileID: 833188162}
+  bed: {fileID: 833188165}
   _DistanceThreshold: 0.1
-  initial: {fileID: 2800000, guid: f1b842bd9dfad7141a11edb0245a39cd, type: 3}
   heightMap: {fileID: 8400000, guid: de67161fa5eb9724184638022019e965, type: 2}
-  PrevHeightMap: {fileID: 8400000, guid: 5dac86646f85b2c4faef3c82ceeffcb2, type: 2}
   CombinedHeightMap: {fileID: 8400000, guid: b9ede2ef92f618845922facde86ea0d2, type: 2}
-  prevNormalMap: {fileID: 8400000, guid: fbd2bee411821c84db466febec625361, type: 2}
   normalMap: {fileID: 8400000, guid: df3246ae7bbcf0f45867758db133828c, type: 2}
-  CombinedNormalMap: {fileID: 8400000, guid: 791423fe089f5d840ac03f46f6aec422, type: 2}
   sdf_mat: {fileID: 2100000, guid: 8089213de953bdf439cd00a11ed4ef2d, type: 2}
 --- !u!4 &54305627
 Transform:
@@ -630,7 +622,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833188161}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.4, y: 0, z: 3.6}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.28, y: 1, z: 0.72}
   m_Children:
   - {fileID: 857704500}

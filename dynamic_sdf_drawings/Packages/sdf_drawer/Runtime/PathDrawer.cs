@@ -7,7 +7,7 @@ public class PathDrawer : MonoBehaviour
 {
     [Header("Input Elements")]
     public Transform endEffector;
-    public BoxCollider box;
+    public Transform bed;
 
     [Header("Controls")] 
     [Tooltip("Defines the maximum distance between the current and previous end effector position in order to renew the texture maps")]
@@ -24,8 +24,6 @@ public class PathDrawer : MonoBehaviour
     private int _height;
     private RenderTexture start;
     private RenderTexture PrevHeightMap;
-    private float3 b_min;
-    private float3 b_max;
     private float3 pos_prev;
     private float3 pos_now;
     private float4 c_pos;
@@ -40,13 +38,18 @@ public class PathDrawer : MonoBehaviour
     {
         firstNormal = true;
         
-        // initialize bounds
-        b_min = box.bounds.min;
-        b_max = box.bounds.max;
-        
         // extract and assign width/height
         _width = heightMap.width;
         _height = heightMap.height;
+
+        var offset_x = bed.transform.position.x - ((bed.localScale.x * 10) / 2);
+        var offset_y = bed.transform.position.z - ((bed.localScale.z * 10) / 2);
+        
+        sdf_mat.SetFloat("_Scale_X",bed.localScale.x * 10);
+        sdf_mat.SetFloat("_Scale_Y",bed.localScale.z * 10);
+        
+        sdf_mat.SetFloat("_Offset_X",offset_x);
+        sdf_mat.SetFloat("_Offset_Y",offset_y);
         
         sdf_mat.SetInt("_Width",_width);
         sdf_mat.SetInt("_Height",_height);
@@ -95,12 +98,6 @@ public class PathDrawer : MonoBehaviour
         
     }
 
-    private float2 Remap(float3 pos)
-    {
-        return math.remap(b_min.xz, b_max.xz, new float2(1,1), new float2(0,0), pos.xz);
-    }
-
-    
     private void DrawPath()
     {
         c_pos = new float4(pos_now.xz,0,1);
@@ -117,6 +114,7 @@ public class PathDrawer : MonoBehaviour
         CombinePathHistory();
         
         //
+        sdf_mat.SetTexture("_PreComputedHeightTex",CombinedHeightMap);
         Graphics.Blit(CombinedHeightMap,normalMap,sdf_mat,1);
         
         
