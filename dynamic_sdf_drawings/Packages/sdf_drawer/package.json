@@ -1,0 +1,21 @@
+{
+  "name": "com.jbs.sdf_drawer",
+  "version": "1.0.0",
+  "displayName": "Procedural sdf drawings",
+  "description": "A tool to create procedural normal and height maps based on line sdfs",
+  "unity": "2020.2",
+  "unityRelease": "1f1",
+  "dependencies": {
+    "com.unity.mathematics": "1.2.1"
+ },
+ "keywords": [
+    "generative_content",
+    "sdfs",
+    "procedural_textures"
+  ],
+  "author": {
+    "name": "Eleana Polychronaki",
+    "email": "el.polychronaki@gmail.com",
+    "url": "https://www.unity3d.com"
+  }
+}
