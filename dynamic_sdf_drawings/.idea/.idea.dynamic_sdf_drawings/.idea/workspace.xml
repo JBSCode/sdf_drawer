@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af8097c0-b4eb-4154-a933-9b61de90c552" name="Default Changelist" comment="" />
+    <list default="true" id="af8097c0-b4eb-4154-a933-9b61de90c552" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.dynamic_sdf_drawings/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dynamic_sdf_drawings/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.dynamic_sdf_drawings/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dynamic_sdf_drawings/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/sdf_drawer/Runtime/PathDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/sdf_drawer/Runtime/PathDrawer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/sdf_drawer/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/sdf_drawer/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/sdf_drawer/Scenes/SampleScene.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/sdf_drawer/Scenes/SampleScene.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/HDRPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/HDRPProjectSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -13,6 +23,7 @@
         <option value="$PROJECT_DIR$/Assets/Resources/SDF_Drawer.shader" />
         <option value="$PROJECT_DIR$/Assets/Resources/Shaders/SDF_Drawer.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PathDrawer.cs" />
+        <option value="$PROJECT_DIR$/Packages/sdf_drawer/Runtime/PathDrawer.cs" />
       </list>
     </option>
   </component>
@@ -56,6 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1616427669589</updated>
       <workItem from="1616427686563" duration="28189000" />
+      <workItem from="1616607029031" duration="2700000" />
     </task>
     <servers />
   </component>

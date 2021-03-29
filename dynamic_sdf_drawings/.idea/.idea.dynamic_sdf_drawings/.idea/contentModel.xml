@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\elean\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\elean\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_dynamic_sdf_drawings.1936535166.00" t="ExcludeRecursive" />
-    <e p="C:\Users\elean\source\repos\dynamic_sdf_drawings" t="IncludeRecursive">
-      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
-      <e p="Assets" t="Include">
-        <e p="Resources" t="Include">
-          <e p="Shaders" t="Include">
-            <e p="SDF_Drawer.shader" t="Include" />
-          </e>
-        </e>
-        <e p="Scripts" t="Include">
-          <e p="PathDrawer.cs" t="Include" />
-        </e>
-      </e>
+    <e p="C:\Users\Eleana\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Eleana\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_dynamic_sdf_drawings.1321871063.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Eleana\Documents\GitHub\sdf_drawer\dynamic_sdf_drawings" t="IncludeRecursive">
       <e p="dynamic_sdf_drawings.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
-      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive">
+        <e p="sdf_drawer" t="Include">
+          <e p="Runtime" t="Include">
+            <e p="PathDrawer.cs" t="Include" />
+            <e p="sdf_drawer.asmdef" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="sdf_drawer.csproj" t="IncludeRecursive" />
       <e p="Temp\Bin" t="ExcludeRecursive" />
     </e>
   </component>
