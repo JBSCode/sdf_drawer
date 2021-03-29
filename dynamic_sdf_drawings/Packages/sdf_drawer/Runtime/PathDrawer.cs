@@ -88,7 +88,7 @@ public class PathDrawer : MonoBehaviour
     void Update()
     {
         pos_now = endEffector.position;
-        Debug.Log(pos_now.y);
+        //Debug.Log(pos_now.y);
         
         if (pos_now.y > _HeightThreshold) InitEndEffector();
 
